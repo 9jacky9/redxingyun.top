@@ -1,0 +1,1119 @@
+/* 红杏云 - redxingyun.top 样式表
+ * 设计风格：当代华彩 · 瑞士大画幅名刊风 (Swiss International Editorial & Coral Red Accent)
+ * 极致性能保障：纯原生CSS，零外部依赖，移动4G加载 < 1000ms
+ */
+
+:root {
+  --top-coral: #FF3B30;
+  --top-coral-hover: #D7261D;
+  --top-ink: #090D16;
+  --top-charcoal: #1E2532;
+  --top-muted: #475569;
+  --top-bg: #FFFFFF;
+  --top-surface: #F8FAFC;
+  --top-border: #E2E8F0;
+  --top-border-fine: #CBD5E1;
+  --top-radius: 4px;
+  --top-radius-card: 8px;
+  --top-shadow-card: 0 4px 20px rgba(9, 13, 22, 0.05);
+  --top-shadow-hero: 0 12px 36px rgba(9, 13, 22, 0.08);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background-color: var(--top-bg);
+  color: var(--top-ink);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* 顶部极细阅读线 */
+.reading-line {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #FF3B30 0%, #F59E0B 100%);
+  z-index: 200;
+}
+
+/* 宽画幅容器 */
+.editorial-container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* 名刊式顶栏 */
+.editorial-nav {
+  background: #FFFFFF;
+  border-bottom: 1px solid var(--top-border);
+  position: sticky;
+  top: 3px;
+  z-index: 100;
+}
+
+.ed-nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 72px;
+}
+
+.ed-logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.ed-logo-svg {
+  width: 176px;
+  height: 46px;
+  display: block;
+}
+
+.ed-nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.ed-nav-item {
+  color: var(--top-muted);
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: color 0.2s ease;
+}
+
+.ed-nav-item:hover {
+  color: var(--top-coral);
+}
+
+.ed-header-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 20px;
+  min-height: 42px;
+  background: var(--top-ink);
+  color: #FFFFFF;
+  border-radius: var(--top-radius);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition: all 0.2s ease;
+}
+
+.ed-header-btn:hover {
+  background: var(--top-coral);
+}
+
+/* 触控规范按键 (>= 44px) */
+.ed-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 12px 28px;
+  font-size: 0.98rem;
+  font-weight: 700;
+  border-radius: var(--top-radius);
+  text-decoration: none;
+  cursor: pointer;
+  letter-spacing: 0.03em;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.ed-btn-primary {
+  background: var(--top-coral);
+  color: #FFFFFF;
+  border: 1px solid var(--top-coral);
+}
+
+.ed-btn-primary:hover {
+  background: var(--top-coral-hover);
+  border-color: var(--top-coral-hover);
+  transform: translateY(-2px);
+}
+
+.ed-btn-dofollow {
+  background: #FFFFFF;
+  color: var(--top-ink);
+  border: 1px solid var(--top-border-fine);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.ed-btn-dofollow:hover {
+  background: #F8FAFC;
+  border-color: var(--top-ink);
+  transform: translateY(-2px);
+}
+
+.ed-btn-secondary {
+  background: #F1F5F9;
+  color: var(--top-charcoal);
+  border: 1px solid var(--top-border);
+}
+
+.ed-btn-secondary:hover {
+  background: #E2E8F0;
+  transform: translateY(-2px);
+}
+
+/* 瑞士大画幅名刊 Hero */
+.manifesto-hero {
+  padding: 80px 0 68px;
+  border-bottom: 1px solid var(--top-border);
+}
+
+.hero-spread-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.ed-kicker-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--top-coral);
+  letter-spacing: 0.1em;
+  margin-bottom: 22px;
+}
+
+.manifesto-headline {
+  font-size: 3.1rem;
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  color: var(--top-ink);
+  margin-bottom: 24px;
+}
+
+.manifesto-headline span {
+  color: var(--top-coral);
+}
+
+.manifesto-lead {
+  font-size: 1.15rem;
+  color: var(--top-muted);
+  line-height: 1.75;
+  margin-bottom: 36px;
+}
+
+.manifesto-action-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.ed-provenance-list {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 0.88rem;
+  color: var(--top-muted);
+  border-top: 1px solid var(--top-border);
+  padding-top: 20px;
+}
+
+.prov-item strong {
+  color: var(--top-ink);
+}
+
+/* Hero 右侧当代名刊红杏凌云画卷 (无任何节点指标) */
+.ed-apricot-canvas {
+  background: #090D16;
+  color: #FFFFFF;
+  border-radius: var(--top-radius-card);
+  padding: 26px 24px;
+  box-shadow: var(--top-shadow-hero);
+  position: relative;
+  border: 1px solid #1E2532;
+  overflow: hidden;
+}
+
+.canvas-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.canvas-title {
+  font-size: 0.92rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #F8FAFC;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.canvas-tag {
+  font-size: 0.72rem;
+  background: rgba(255, 59, 48, 0.2);
+  color: #FF6961;
+  border: 1px solid rgba(255, 59, 48, 0.45);
+  padding: 3px 10px;
+  border-radius: 2px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.ed-apricot-svg {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  display: block;
+}
+
+.canvas-footer {
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.82rem;
+  color: #94A3B8;
+  letter-spacing: 0.03em;
+}
+
+.canvas-footer strong {
+  color: #FF6961;
+}
+
+/* 瑞士名刊流光与红杏落英动效 */
+@keyframes edPetal1 {
+  0% { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+  25% { opacity: 0.95; }
+  75% { opacity: 0.95; }
+  100% { transform: translate(-65px, 85px) rotate(180deg); opacity: 0; }
+}
+
+@keyframes edPetal2 {
+  0% { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+  20% { opacity: 0.9; }
+  80% { opacity: 0.9; }
+  100% { transform: translate(75px, 95px) rotate(-160deg); opacity: 0; }
+}
+
+@keyframes edBranchBreeze {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-1.5deg); }
+}
+
+@keyframes edMistFlow {
+  0%, 100% { transform: translateX(0); opacity: 0.7; }
+  50% { transform: translateX(10px); opacity: 0.9; }
+}
+
+.anim-ed-p1 { animation: edPetal1 6s ease-in-out infinite; }
+.anim-ed-p2 { animation: edPetal2 7.2s ease-in-out infinite 2s; }
+.anim-ed-tree { transform-origin: 320px 70px; animation: edBranchBreeze 4.5s ease-in-out infinite; }
+.anim-ed-mist { animation: edMistFlow 5s ease-in-out infinite; }
+
+/* 通用名刊章节 */
+.ed-section {
+  padding: 82px 0;
+  border-bottom: 1px solid var(--top-border);
+}
+
+.ed-section-titlebox {
+  margin-bottom: 54px;
+  max-width: 760px;
+}
+
+.ed-pretitle {
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--top-coral);
+  margin-bottom: 8px;
+}
+
+.ed-maintitle {
+  font-size: 2.35rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: var(--top-ink);
+  margin-bottom: 12px;
+}
+
+.ed-subtitle {
+  font-size: 1.05rem;
+  color: var(--top-muted);
+}
+
+/* 核心优势卡片：动态替换标题【澎湃连接硬核实力】 (3卡布局) */
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.pillar-card {
+  background: var(--top-surface);
+  border: 1px solid var(--top-border);
+  border-radius: var(--top-radius-card);
+  padding: 34px 28px;
+  box-shadow: var(--top-shadow-card);
+  transition: all 0.2s ease;
+}
+
+.pillar-card:hover {
+  border-color: var(--top-coral);
+  transform: translateY(-3px);
+}
+
+.outline-icon-frame {
+  width: 48px;
+  height: 48px;
+  border: 1.5px solid var(--top-coral);
+  border-radius: var(--top-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+  background: #FFFFFF;
+}
+
+.pillar-card-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--top-ink);
+  margin-bottom: 12px;
+}
+
+.pillar-card-text {
+  font-size: 0.95rem;
+  color: var(--top-muted);
+  line-height: 1.7;
+}
+
+/* 算力与流媒体支持卡片：动态替换标题【多模态内容与 AI 基础设施赋能】 (4卡布局) */
+.creative-stream-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.creative-card {
+  background: #FFFFFF;
+  border: 1px solid var(--top-border);
+  border-radius: var(--top-radius-card);
+  padding: 26px 22px;
+  box-shadow: var(--top-shadow-card);
+}
+
+.creative-title {
+  font-size: 1.12rem;
+  font-weight: 800;
+  color: var(--top-ink);
+  margin: 14px 0 8px;
+}
+
+.creative-desc {
+  font-size: 0.9rem;
+  color: var(--top-muted);
+  line-height: 1.6;
+}
+
+/* 价格对比货架：动态替换标题【旗舰订阅方案】 (必须3个) */
+.ed-pricing-deck {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+  align-items: stretch;
+}
+
+.ed-price-box {
+  background: #FFFFFF;
+  border: 1px solid var(--top-border);
+  border-radius: var(--top-radius-card);
+  padding: 38px 30px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: var(--top-shadow-card);
+}
+
+.ed-price-box.flagship-picked {
+  border: 2px solid var(--top-ink);
+  background: #F8FAFC;
+}
+
+.ed-tag-top {
+  position: absolute;
+  top: -12px;
+  left: 30px;
+  background: var(--top-ink);
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 3px 12px;
+  border-radius: 2px;
+}
+
+.tier-code-label {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--top-coral);
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+
+.tier-heading-name {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--top-ink);
+  margin-bottom: 6px;
+}
+
+.tier-brief-summary {
+  font-size: 0.88rem;
+  color: var(--top-muted);
+  margin-bottom: 24px;
+}
+
+.ed-cost-row {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-bottom: 26px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--top-border);
+}
+
+.ed-currency-mark {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--top-ink);
+}
+
+.ed-amount-val {
+  font-size: 3.2rem;
+  font-weight: 900;
+  color: var(--top-ink);
+  line-height: 1;
+}
+
+.ed-period-text {
+  font-size: 0.92rem;
+  color: var(--top-muted);
+}
+
+.ed-specs-bullet-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+  flex-grow: 1;
+}
+
+.ed-spec-bullet {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.92rem;
+  color: var(--top-charcoal);
+}
+
+.bullet-dash {
+  width: 6px;
+  height: 6px;
+  background: var(--top-coral);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* 用户见证：动态替换标题【行业观察家与技术极客评语】 (3条) */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+.review-item {
+  background: var(--top-surface);
+  border: 1px solid var(--top-border);
+  border-radius: var(--top-radius-card);
+  padding: 28px 24px;
+}
+
+.review-text {
+  font-size: 0.95rem;
+  color: var(--top-charcoal);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.review-byline {
+  border-top: 1px solid var(--top-border);
+  padding-top: 14px;
+}
+
+.reviewer-name {
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: var(--top-ink);
+}
+
+.reviewer-title {
+  font-size: 0.82rem;
+  color: var(--top-muted);
+}
+
+/* 常见问题：动态替换标题【技术与架构深度问答】 (4条) */
+.curated-faq-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 860px;
+}
+
+.faq-entry-box {
+  background: var(--top-surface);
+  border: 1px solid var(--top-border);
+  border-radius: var(--top-radius-card);
+  padding: 24px 26px;
+}
+
+.faq-entry-q {
+  font-size: 1.12rem;
+  font-weight: 800;
+  color: var(--top-ink);
+  margin-bottom: 10px;
+}
+
+.faq-entry-a {
+  font-size: 0.95rem;
+  color: var(--top-muted);
+  line-height: 1.7;
+}
+
+/* 页脚：严格仅展示且只展示4个中文标题，独立页面 */
+.editorial-quad-footer {
+  background: #090D16;
+  color: #94A3B8;
+  padding: 56px 0 38px;
+  border-top: 3px solid var(--top-coral);
+}
+
+.ed-footer-nav-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 46px;
+  margin-bottom: 26px;
+}
+
+.ed-footer-link {
+  color: #F8FAFC;
+  text-decoration: none;
+  font-size: 1.02rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: var(--top-radius);
+  transition: all 0.2s ease;
+}
+
+.ed-footer-link:hover {
+  color: var(--top-coral);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.ed-footer-colophon {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #64748B;
+}
+
+/* 子页面独立排版 */
+.ed-subpage-wrap {
+  padding: 64px 0 88px;
+  min-height: calc(100vh - 230px);
+}
+
+.ed-subpage-box {
+  background: #FFFFFF;
+  border: 1px solid var(--top-border);
+  border-radius: var(--top-radius-card);
+  padding: 46px 52px;
+  box-shadow: var(--top-shadow-card);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.ed-subpage-h1 {
+  font-size: 2.3rem;
+  font-weight: 900;
+  color: var(--top-ink);
+  margin-bottom: 24px;
+  padding-bottom: 18px;
+  border-bottom: 2px solid var(--top-ink);
+}
+
+.ed-subpage-body h2 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--top-ink);
+  margin: 32px 0 12px;
+}
+
+.ed-subpage-body p {
+  font-size: 1rem;
+  color: #334155;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.ed-subpage-body ul {
+  padding-left: 24px;
+  margin-bottom: 22px;
+  color: #334155;
+  line-height: 1.8;
+}
+
+.ed-subpage-back {
+  display: inline-flex;
+  margin-top: 30px;
+  color: var(--top-coral);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* 响应式媒体查询 (Mobile 单列适配，触控尺寸规范) */
+@media (max-width: 992px) {
+  .hero-spread-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .pillars-grid {
+    grid-template-columns: 1fr;
+  }
+  .creative-stream-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .ed-pricing-deck {
+    grid-template-columns: 1fr;
+  }
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  /* 移动端双层自适应刊物导览 */
+  .ed-nav-inner {
+    height: auto;
+    min-height: 62px;
+    padding: 10px 0 8px;
+    flex-wrap: wrap;
+    gap: 8px 0;
+  }
+  .ed-logo-link {
+    order: 1;
+  }
+  .ed-logo-svg {
+    width: 150px;
+    height: 38px;
+  }
+  .ed-header-btn {
+    order: 2;
+    padding: 6px 14px;
+    min-height: 36px;
+    font-size: 0.82rem;
+    letter-spacing: 0.02em;
+  }
+  .ed-nav-menu {
+    order: 3;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 8px 2px 2px;
+    margin: 0;
+    border-top: 1px solid var(--top-ink);
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .ed-nav-menu::-webkit-scrollbar {
+    display: none;
+  }
+  .ed-nav-menu .ed-nav-item,
+  .ed-nav-menu .ed-nav-item:visited {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    padding: 6px 12px;
+    border-radius: var(--top-radius);
+    background: #F1F5F9;
+    color: var(--top-ink);
+    text-decoration: none;
+    flex-shrink: 0;
+    transition: all 0.15s ease;
+  }
+  .ed-nav-menu .ed-nav-item:hover,
+  .ed-nav-menu .ed-nav-item:active,
+  .ed-nav-menu .ed-nav-item.active {
+    background: var(--top-ink);
+    color: #FFFFFF;
+  }
+  .manifesto-headline {
+    font-size: 2.2rem;
+  }
+  .creative-stream-grid {
+    grid-template-columns: 1fr;
+  }
+  .manifesto-action-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .ed-btn {
+    width: 100%;
+    min-height: 50px;
+  }
+  .ed-footer-nav-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .ed-subpage-box {
+    padding: 28px 20px;
+  }
+}
+
+/* ==========================================================
+ * 全局超链接统一强调色规范 (严禁浏览器默认蓝紫色，访问前后恒定高辨识度)
+ * ========================================================== */
+a, a:visited {
+  color: #FF3B30;
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  color: #D32F2F;
+  text-decoration-color: #D32F2F;
+}
+
+/* 按钮、导航、Logo与瑞士刊物卡片链接无下划线保持 */
+.ed-brand-logo,
+.ed-nav-item,
+.ed-header-btn,
+.ed-btn,
+.ed-footer-link,
+.ed-subpage-back,
+.journal-card-title a,
+.journal-read-link {
+  text-decoration: none;
+}
+
+.ed-brand-logo, .ed-brand-logo:visited { color: var(--top-ink); }
+.ed-nav-item, .ed-nav-item:visited { color: var(--top-muted); }
+.ed-nav-item:hover, .ed-nav-item.active { color: #FF3B30; }
+.ed-header-btn, .ed-header-btn:visited { color: #FFFFFF; }
+.ed-btn-primary, .ed-btn-primary:visited { color: #FFFFFF; }
+.ed-btn-outline, .ed-btn-outline:visited { color: var(--top-ink); }
+.ed-footer-link, .ed-footer-link:visited { color: #F8FAFC; }
+.ed-footer-link:hover { color: #FF3B30; }
+
+/* ==========================================================
+ * 架构纪事 (瑞士大画幅名刊：期刊聚合页与深度专栏排版)
+ * ========================================================== */
+.journal-hero-header {
+  background: #F1F5F9;
+  border-bottom: 2px solid var(--top-ink);
+  padding: 64px 0 50px;
+  text-align: center;
+}
+
+.journal-kicker-tag {
+  color: var(--top-coral);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.journal-headline {
+  font-size: 2.6rem;
+  font-weight: 900;
+  color: var(--top-ink);
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+}
+
+.journal-subtext {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  color: var(--top-muted);
+  line-height: 1.7;
+}
+
+.journal-catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  padding: 56px 0 84px;
+}
+
+.journal-entry-card {
+  background: #FFFFFF;
+  border: 1px solid var(--top-border);
+  border-radius: var(--top-radius-card);
+  overflow: hidden;
+  box-shadow: var(--top-shadow-card);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s ease;
+}
+
+.journal-entry-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--top-coral);
+  box-shadow: 0 16px 32px rgba(9, 13, 22, 0.08);
+}
+
+.journal-thumb-wrap {
+  height: 150px;
+  background: linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--top-border);
+}
+
+.journal-body-wrap {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.journal-entry-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--top-muted);
+  margin-bottom: 12px;
+}
+
+.journal-pillar-tag {
+  background: #EFF6FF;
+  color: #1D4ED8;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: 800;
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+}
+
+.journal-card-title {
+  font-size: 1.15rem;
+  font-weight: 900;
+  line-height: 1.45;
+  color: var(--top-ink);
+  margin-bottom: 12px;
+}
+
+.journal-card-title a {
+  color: var(--top-ink);
+}
+
+.journal-card-title a:hover {
+  color: var(--top-coral);
+}
+
+.journal-card-excerpt {
+  font-size: 0.92rem;
+  color: var(--top-muted);
+  line-height: 1.65;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.journal-read-link {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--top-coral);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* 瑞士深度文章详情排版 */
+.article-ed-wrap {
+  padding: 56px 0 88px;
+}
+
+.article-ed-box {
+  max-width: 880px;
+  margin: 0 auto;
+  background: #FFFFFF;
+  border: 1px solid var(--top-border);
+  border-radius: var(--top-radius-card);
+  padding: 48px 52px;
+  box-shadow: var(--top-shadow-card);
+}
+
+.journal-crumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.86rem;
+  color: var(--top-muted);
+  margin-bottom: 24px;
+}
+
+.journal-crumbs a {
+  color: var(--top-muted);
+}
+
+.journal-crumbs a:hover {
+  color: var(--top-coral);
+}
+
+.article-ed-h1 {
+  font-size: 2.3rem;
+  font-weight: 900;
+  line-height: 1.35;
+  color: var(--top-ink);
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+
+.article-ed-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid var(--top-ink);
+  margin-bottom: 32px;
+  font-size: 0.88rem;
+  color: var(--top-muted);
+}
+
+.journal-lead-box {
+  background: #F8FAFC;
+  border-left: 4px solid var(--top-coral);
+  padding: 22px 26px;
+  border-radius: 0 var(--top-radius) var(--top-radius) 0;
+  margin-bottom: 36px;
+  font-size: 1.02rem;
+  line-height: 1.75;
+  color: #1E293B;
+  font-weight: 500;
+}
+
+.journal-prose h2 {
+  font-size: 1.45rem;
+  font-weight: 900;
+  color: var(--top-ink);
+  margin: 40px 0 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--top-border);
+}
+
+.journal-prose h3 {
+  font-size: 1.18rem;
+  font-weight: 800;
+  color: var(--top-ink);
+  margin: 26px 0 12px;
+}
+
+.journal-prose p {
+  font-size: 1.02rem;
+  line-height: 1.82;
+  color: #334155;
+  margin-bottom: 18px;
+}
+
+.journal-prose ul, .journal-prose ol {
+  padding-left: 26px;
+  margin-bottom: 22px;
+  color: #334155;
+  line-height: 1.82;
+}
+
+.journal-prose blockquote {
+  background: #F1F5F9;
+  border-left: 4px solid var(--top-ink);
+  padding: 16px 22px;
+  margin: 24px 0;
+  font-style: italic;
+  color: #1E293B;
+  border-radius: 0 var(--top-radius) var(--top-radius) 0;
+}
+
+.journal-article-footer {
+  margin-top: 46px;
+  padding-top: 24px;
+  border-top: 1px solid var(--top-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+@media (max-width: 992px) {
+  .journal-catalog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .journal-catalog-grid {
+    grid-template-columns: 1fr;
+  }
+  .article-ed-box {
+    padding: 28px 20px;
+  }
+  .article-ed-h1 {
+    font-size: 1.85rem;
+  }
+}
+
